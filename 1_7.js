@@ -1,4 +1,4 @@
-console.log("hello world");
+/*console.log("hello world");
 
 var a = 200;
 console.log(a)
@@ -48,10 +48,10 @@ setTimeout(() => {
 
 
 
-let b = 10;
+/*let b = 10;
 console.log(b);
 b = "hello";
-console.log(b);
+console.log(b);*/
 
 
 
@@ -64,7 +64,7 @@ console.log(b);
 function outer() {
     let a = 10;
     function inner() {
-        let a = 20;
+        let b = 20;
         console.log(a + b);
     }
     inner();
