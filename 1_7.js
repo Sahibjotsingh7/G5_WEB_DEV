@@ -53,18 +53,23 @@ console.log(b);
 b = "hello";
 console.log(b);
 
-var c = 0100;
-console.log(c); // 
 
 
 
 
 
-
-
-
-
-
+// lexical environment // lexical environment is the environment in which a function is defined
+// closure // closure is a function that has access to its own scope, the outer function's scope, and the global scope
+//lexical scope // lexical scope is the scope in which a function is defined, not where it is called
+function outer() {
+    let a = 10;
+    function inner() {
+        let a = 20;
+        console.log(a + b);
+    }
+    inner();
+}
+outer();
 
 
 
