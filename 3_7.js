@@ -55,3 +55,65 @@ walkinres(() => {
     });
   });
 });
+
+
+// without arrow functions
+
+function walkinres(cb) {
+    console.log("walkinres called");
+    setTimeout(function() {
+        console.log("walkinres completed");
+        cb();
+    }, 3000);
+    }
+
+  function checkmenu(cb) {  
+    console.log("checkmenu called");
+    setTimeout(function() {
+        console.log("checkmenu completed");
+        cb();
+    }, 5000);
+
+
+    }
+
+    function orderfood(cb) {
+        console.log("orderfood called");
+        setTimeout(function() {
+            console.log("orderfood completed");
+            cb();
+        }, 2000);
+    }
+
+    function havingfood(cb) {
+        console.log("havingfood called");
+        setTimeout(function() {
+            console.log("havingfood completed");
+            cb();
+        }, 3000);
+    }
+
+    function paybill(cb) {
+        console.log("paybill called");
+        setTimeout(function() {
+            console.log("paybill completed");
+            cb();
+        }, 1000);
+    }
+
+// Callback hell: Nested callbacks without arrow functions
+
+console.log("Callback hell example started without arrow functions");
+
+
+walkinres(function() {
+    checkmenu(function() {
+        orderfood(function() {
+            havingfood(function() {
+                paybill(function() {
+                    console.log("Callback hell example completed without arrow functions");
+                });
+            });
+        });
+    });
+})
