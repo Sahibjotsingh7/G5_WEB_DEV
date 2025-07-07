@@ -34,3 +34,43 @@ Person.prototype.greet = function() {
 
 const john = new Person("John", 30);
 john.greet(); // Output
+
+
+// map replica
+
+const arr = [1, 2, 3, 4, 5];
+
+Array.prototype.myMap = function(callback) {
+    const result = [];
+    for (let i = 0; i < this.length; i++) {
+        result.push(callback(this[i], i, this));
+    }
+    return result;
+};
+
+const doubleValue = arr.myMap(function(num) {
+    return num * 2;
+});
+
+console.log(doubleValue); // Output: [2, 4, 6, 8, 10]
+
+
+
+// filter replica
+const arr2 = [1, 2, 3, 4, 5];
+
+Array.prototype.myFilter = function(callback) {
+    const result = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            result.push(this[i]);
+        }
+    }
+    return result;
+};
+
+const evenNumbers = arr2.myFilter(function(num) {
+    return num % 2 === 0;
+});
+
+console.log(evenNumbers); // Output: [2, 4]
