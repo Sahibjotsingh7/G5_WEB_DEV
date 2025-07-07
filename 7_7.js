@@ -73,4 +73,19 @@ const evenNumbers = arr2.myFilter(function(num) {
     return num % 2 === 0;
 });
 
+
 console.log(evenNumbers); // Output: [2, 4]
+
+//reduce replica
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    let accumulator = initialValue !== undefined ? initialValue : this[0];
+    for (let i = initialValue !== undefined ? 0 : 1; i < this.length; i++) {
+        accumulator = callback(accumulator, this[i], i, this);
+    }
+    return accumulator;
+}
+
+const sum = arr2.myReduce(function(acc, num) {
+    return acc + num;
+}, 0);
