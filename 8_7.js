@@ -41,7 +41,7 @@ const myPromise3 = new Promise((resolve, reject) => {
 
 const myPromise4 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        const success = false; 
+        const success = true; 
         if (success) {
         resolve("again work");
         } else {
@@ -51,7 +51,7 @@ const myPromise4 = new Promise((resolve, reject) => {
 });
 
 
-myPromise
+/*myPromise
    .then((result) => {
 
         console.log(result);
@@ -70,4 +70,14 @@ myPromise
    })
    .catch((error) => {
        console.error(error);
-   });
+   });*/
+
+   Promise.all([myPromise, myPromise2, myPromise3, myPromise4])
+       .then((results) => {
+           results.forEach((result) => {
+               console.log(result);
+           });
+       })
+       .catch((error) => {
+           console.error(error);
+       });
