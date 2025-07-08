@@ -89,3 +89,5 @@ Array.prototype.myReduce = function(callback, initialValue) {
 const sum = arr2.myReduce(function(acc, num) {
     return acc + num;
 }, 0);
+
+
