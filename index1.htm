@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>javaScript</h1>
-    
-    
+    <div id="grandparent">
+        <span>grandparent</span>
+        <div id="parent">
+            <span>parent</span>
+            <div id="child">
+                <span>child</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const grandparent = document.getElementById('grandparent');
+    const parent = document.getElementById('parent');
+    const child = document.getElementById('child');
+
+    // Event listener for the grandparent element
+    grandparent.addEventListener('click', function(event) {
+        console.log('Grandparent clicked');
+        // Stop the event from bubbling up to parent and grandparent
+        event.stopPropagation();
+    });
+
+    // Event listener for the parent element
+    parent.addEventListener('click', function(event) {
+        console.log('Parent clicked');
+        // Stop the event from bubbling up to grandparent
+        event.stopPropagation();
+    });
+
+    // Event listener for the child element
+    child.addEventListener('click', function(event) {
+        console.log('Child clicked');
+        // Stop the event from bubbling up to parent and grandparent
+        event.stopPropagation();
+    });
+    </script>
 </body>
 </html>
