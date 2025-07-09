@@ -26,3 +26,37 @@ async function handlePromises() {
 // event bubbling
 // event bubbling is a phase in the event propagation process
 // it allows you to handle events as they travel up the DOM tree
+
+
+
+// call , apply , bind 
+// 
+
+function admission( studentZone,  studentCampus){
+    console.log(`${this.name} is admitted in ${this.class} successfully at ${studentCampus} in ${studentZone}`  )
+}
+
+const student1 = {
+     name : "ram",
+     class:"g4"
+}
+
+const student2 = {
+    name : "sham",
+    class : "g5"
+}
+
+// call is imidaite invoke function
+
+admission.call(student1,"punjab","rajpura");
+
+//aplly same but pass arg as array
+
+admission.apply(student2,["punjab","rajpura"])
+
+// bind same but u have o call the func 
+
+const data = admission.bind(student1,"punjab","rajpura");
+
+data();
+
