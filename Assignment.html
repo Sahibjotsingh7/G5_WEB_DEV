@@ -64,19 +64,8 @@
     }
 
     fetchProducts();
-    searchInput.addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const productCards = document.querySelectorAll('#product-grid > div');
-
-      productCards.forEach(card => {
-        const title = card.querySelector('h2').textContent.toLowerCase();
-        if (title.includes(searchTerm)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+    //api calls are expensive, so we will not call it again again and again 
+    // 
 
  
 
